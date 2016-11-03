@@ -12,22 +12,7 @@ module Trikeapps
       @operators = ["+","*"]
     end
 
-    def operands
-      @operands
-    end
-
-    def operators
-      @operators
-    end
-
-    def operator_value
-      @operator_value
-    end
-
-    def expected_result
-      @expected_result
-    end
-
+    #this increments the operator combination also making it unique
     def increment_operator
       incremented = false
       i = 0
@@ -43,6 +28,7 @@ module Trikeapps
       incremented
     end
 
+    #this generates a new equation based on the newly incremented operator list
     def create_equation
       equation =''
       for i in 0..(@operands.size-1)
@@ -57,7 +43,7 @@ module Trikeapps
       equation
     end
 
-
+    #this function guesses the best guess from the top x number of guess
     def guess(guesses)
 
       total_guesses = 0
@@ -82,10 +68,10 @@ module Trikeapps
         p a
       end
 
-      p "Guesses: #{total_guesses} Best Guess: #{best_guess(guesses_array)}"
+      "Guesses: #{total_guesses} Best Guess: #{best_guess(guesses_array)}"
     end
 
-    # This method accepts a string and evaluates math operation
+    # This method accepts a string equation & evaluate the mathematical operation
     def evaluate_equation(string)
       actual_result = eval(string.chars.join(''))
       actual_result
@@ -97,7 +83,7 @@ module Trikeapps
       guessed_string
     end
 
-    # This method accepts the array list from the list of user guesses to give out the best guess
+    # This method accepts the array list from the generated guesses to find the best guess amoung it 
     def best_guess(guessed_list)
       bestguess = guessed_list[0]
       guessed_list.each_index do |i|
@@ -107,5 +93,20 @@ module Trikeapps
       end
       bestguess
     end
+
+    # Accesors start #
+    def operands
+      @operands
+    end
+    def operators
+      @operators
+    end
+    def operator_value
+      @operator_value
+    end
+    def expected_result
+      @expected_result
+    end
+    # Accesors stop #
   end
 end
