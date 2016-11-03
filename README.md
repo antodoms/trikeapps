@@ -21,8 +21,44 @@ Or install it yourself as:
     $ gem install trikeapps
 
 ## Usage
+Please check the test script to understand more on the supporting functions for each module classes. This is a part of Trike challenge (https://github.com/tricycle/trike-programming-language-test)
 
-TODO: Write usage instructions here
+### Using String Demystifier
+
+```ruby
+@string = Trikeapps::StringDemystifier.new "!SSWSWSKCOR !OTNAAAWAA!"
+@string..demystify
+```
+
+### Using Equation Guesser
+
+```ruby
+@string = Trikeapps::EquationGuesser.new([1,2,3,4],9)
+@string.guess(20)
+```
+
+### Using Elixir String Reverse
+
+```ruby
+@string = Trikeapps::Elixir.new
+@string.stringreverse
+```
+
+## Testing
+For running the rspec tests, first clone this repository and from inside the directory run the command :
+
+    $ rake test
+
+During the rake test to check the elixir script enter the string "t r i k e" when prompted in rspec
+
+You can also test the script by using bundle console and manually testing each class as below
+
+```console
+bundle console
+
+@string = Trikeapps::StringDemystifier.new "!SSWSWSKCOR !OTNAAAWAA!"
+@string..demystify
+```
 
 ## Development
 
