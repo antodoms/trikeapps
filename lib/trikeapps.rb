@@ -1,5 +1,7 @@
 require "trikeapps/version"
+require "trikeapps/string_demystifier"
 
 module Trikeapps
-  # Your code goes here...
+  
+  
 end
